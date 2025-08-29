@@ -32,14 +32,14 @@ const Sidebar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredNavLinks = navLinks.filter(link => {
-    return link.adminOnly ? user.role === 'Super Admin' : true;
+    return link.adminOnly ? user.role === 'Admin' : true;
   });
 
   return (
     <aside className="w-64 bg-dark-red text-white flex flex-col">
       <div className="p-6 text-center border-b border-white/20">
         <h1 className="text-2xl font-bold">[Nama Brand]</h1>
-        <p className="text-sm text-gray-300">({user?.role || 'Role'})</p>
+        <p className="text-sm text-gray-300">{user?.role || 'Role'}</p>
       </div>
 
       <nav className="flex-1 px-4 py-2 space-y-2 mt-4">

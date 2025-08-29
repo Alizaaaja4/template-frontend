@@ -6,7 +6,7 @@ import LoginPage from './pages/auth/LoginPage';
 // admin
 import AdminLayout from './layouts/AdminLayout';
 import BusinessPage from './pages/admin/BusinessPage';
-
+import UsersPage from './pages/admin/UsersPage';
 
 function App() {
   return (
@@ -18,8 +18,7 @@ function App() {
       {/* Rute Admin */}
       <Route path="/admin" element={<AdminLayout />}>
         <Route path="dashboard" element={<BusinessPage />} />
-        {/* <Route path="users" element={<UsersManagementPage />} /> */}
-        {/* Tambahkan rute admin lainnya di sini */}
+        <Route path="users" element={<UsersPage />} />
       </Route>
 
       {/* Rute default jika halaman tidak ditemukan */}

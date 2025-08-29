@@ -4,7 +4,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({
-    role: 'Super Admin', // <-- GANTI INI menjadi 'Staff' untuk mencoba peran lain
+    role: 'Admin', // <-- GANTI INI menjadi 'Staff' untuk mencoba peran lain
   });
 
   const logout = () => {
