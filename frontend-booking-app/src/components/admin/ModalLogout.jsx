@@ -24,7 +24,7 @@ const ModalLogout = ({ isOpen, onClose, onConfirm }) => {
           {/* Tombol "Yes" */}
           <button
             onClick={onConfirm} 
-            className="w-[100px] text-sm bg-gradient-to-r from-gradasi-dark-red-1 to-gradasi-light-red-1 text-white font-medium py-2 px-4 rounded-3xl shadow-md hover:from-gradasi-light-red-1 hover:to-gradasi-dark-red-1 transition duration-300"
+            className="w-[100px] text-sm bg-dark-red text-white font-medium py-2 px-4 rounded-3xl shadow-md transition duration-300 hover:bg-red-600"
           >
             Yes
           </button>

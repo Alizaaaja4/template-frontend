@@ -1,34 +1,35 @@
+// src/pages/admin/UsersPage.jsx
 import { useState } from 'react';
-import Header from "../../components/admin/users-management/Header";
-import TableControls from "../../components/admin/users-management/TableControls";
-import UsersTable from "../../components/admin/users-management/UsersTable";
-import Pagination from "../../components/admin/users-management/Pagination";
-import ModalAddUser from '../../components/admin/users-management/ModalAddUser';
-import ModalEditUser from '../../components/admin/users-management/ModalEditUser'; // Impor Modal Edit
-import ModalDelateUser from '../../components/admin/users-management/ModalDelateUser'; // Impor Modal Delete
+import Header from "../../components/admin/fields-management/Header";
+import TableControls from "../../components/admin/fields-management/TableControls";
+import FieldsTable from "../../components/admin/fields-management/FieldsTable";
+import Pagination from "../../components/admin/fields-management/Pagination";
+import ModalAddField from '../../components/admin/fields-management/ModalAddField';
+import ModalEditField from '../../components/admin/fields-management/ModalEditField';
+import ModalDelateField from '../../components/admin/fields-management/ModalDelateField';
 
-const UsersPage = () => {
+const FieldsPage = () => {
   // State untuk setiap modal
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
-  // State untuk menyimpan data user yang dipilih
-  const [selectedUser, setSelectedUser] = useState(null);
+  // State untuk menyimpan data lapangan yang dipilih
+  const [selectedField, setSelectedField] = useState(null);
 
   // --- Fungsi untuk menangani aksi dari tabel ---
-  const handleEdit = (user) => {
-    setSelectedUser(user);
+  const handleEdit = (management_lap) => {
+    setSelectedField(management_lap);
     setIsEditModalOpen(true);
   };
 
-  const handleDelete = (user) => {
-    setSelectedUser(user);
+  const handleDelete = (management_lap) => {
+    setSelectedField(management_lap);
     setIsDeleteModalOpen(true);
   };
   
   const handleConfirmDelete = () => {
-    console.log("Deleting user:", selectedUser);
+    console.log("Deleting field:", selectedField);
     // Logika untuk call API delete akan ada di sini
     setIsDeleteModalOpen(false); // Tutup modal setelah selesai
   }
@@ -44,16 +45,16 @@ const UsersPage = () => {
 
   return (
     <div className="p-1 md:p-4">
-      <Header onAddUserClick={() => setIsAddModalOpen(true)} />
+      <Header onAddFieldClick={() => setIsAddModalOpen(true)} />
 
       <div className="bg-white p-4 rounded-lg shadow-md mb-4">
         <TableControls />
       </div>
 
       {/* Kirim fungsi handle ke tabel */}
-      <UsersTable 
-        onEditUserClick={handleEdit}
-        onDeleteUserClick={handleDelete}
+      <FieldsTable 
+        onEditFieldClick={handleEdit}
+        onDeleteFieldClick={handleDelete}
       />
       <Pagination 
         currentPage={currentPage}
@@ -62,23 +63,23 @@ const UsersPage = () => {
       />
 
       {/* Render semua modal di sini */}
-      <ModalAddUser 
+      <ModalAddField 
         isOpen={isAddModalOpen} 
         onClose={() => setIsAddModalOpen(false)} 
       />
-      <ModalEditUser
+      <ModalEditField
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
-        user={selectedUser}
+        management_lap={selectedField}
       />
-      <ModalDelateUser
+      <ModalDelateField
         isOpen={isDeleteModalOpen}
         onClose={() => setIsDeleteModalOpen(false)}
         onConfirm={handleConfirmDelete}
-        user={selectedUser}
+        management_lap={selectedField}
       />
     </div>
   );
 };
 
-export default UsersPage;
+export default FieldsPage;
