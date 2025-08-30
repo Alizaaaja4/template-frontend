@@ -1,4 +1,3 @@
-// src/pages/admin/UsersPage.jsx
 import { useState } from 'react';
 import Header from "../../components/admin/fields-management/Header";
 import TableControls from "../../components/admin/fields-management/TableControls";

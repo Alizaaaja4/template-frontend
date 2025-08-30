@@ -33,7 +33,7 @@ const FieldsTable = ({ onEditFieldClick, onDeleteFieldClick }) => {
           {dummyData.map((management_lap, index) => (
             <tr key={management_lap.id} className="bg-white border-b">
               <td className="px-6 py-2">{index + 1}</td>
-              <td className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap">
+              <td className="px-6 py-2">
                 {management_lap.no_lapang}
               </td>
               <td className="px-6 py-2">{management_lap.jenis}</td>

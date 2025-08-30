@@ -38,7 +38,7 @@ const UsersTable = ({ onEditUserClick, onDeleteUserClick }) => {
           {dummyData.map((user, index) => (
             <tr key={user.id} className="bg-white border-b">
               <td className="px-6 py-2">{index + 1}</td>
-              <td className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap">
+              <td className="px-6 py-2">
                 {user.nama}
               </td>
               <td className="px-6 py-2">{user.username}</td>

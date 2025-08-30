@@ -8,6 +8,8 @@ import AdminLayout from './layouts/AdminLayout';
 import BusinessPage from './pages/admin/BusinessPage';
 import UsersPage from './pages/admin/UsersPage';
 import FieldsPage from './pages/admin/FieldsPage';
+import TransactionPage from './pages/admin/TransactionPage';
+import TicketingPage from './pages/admin/TicketingPage';
 
 // not found 404
 import NotFoundPage from './pages/not-found/NotFoundPage';
@@ -24,6 +26,8 @@ function App() {
         <Route path="dashboard" element={<BusinessPage />} />
         <Route path="users" element={<UsersPage />} />
         <Route path="fields" element={<FieldsPage />} />
+        <Route path="transactions" element={<TransactionPage />} />
+        <Route path="ticketing" element={<TicketingPage />} />
       </Route>
 
       {/* Rute default jika halaman tidak ditemukan */}
